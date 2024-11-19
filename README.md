@@ -3,6 +3,8 @@
 
 This module encapsulates azurerm\_monitor\_autoscale\_setting where it can be used for autoscaling configuration for VMSS, App Services and other scalable resources.
 
+The examples in this module are adapted from virtual machine scale set AVM module: https://github.com/Azure/terraform-azurerm-avm-res-compute-virtualmachinescaleset.
+
 <!-- markdownlint-disable MD033 -->
 ## Requirements
 
@@ -41,13 +43,13 @@ Type: `string`
 
 ### <a name="input_profiles"></a> [profiles](#input\_profiles)
 
-Description: (Required) A map of profile to associate to the AutoScale Setting. Specifies one or more (up to 20).
+Description: (Required) A map of profiles to associate to the AutoScale Setting. Specifies one or more (up to 20).
 - `name` - (Required) Specifies the name of the profile.
 - `capacity` - (Required) A capacity block as defined below.
   - `default` - (Required) The number of instances that are available for scaling if metrics are not available for evaluation. The default is only used if the current instance count is lower than the default. Valid values are between 0 and 1000.
   - `maximum` - (Required) The maximum number of instances for this resource. Valid values are between 0 and 1000.
   - `minimum` - (Required) The minimum number of instances for this resource. Valid values are between 0 and 1000.
-- `rule` - (Optional) One or more (up to 10) rule blocks as defined below.
+- `rules` - (Optional) One or more (up to 10) rule blocks as defined below.
   - `metric_trigger` - (Required) A metric\_trigger block as defined below.
     - `metric_name` - (Required) The name of the metric that defines what the rule monitors, such as Percentage CPU for Virtual Machine Scale Sets and CpuPercentage for App Service Plan.
     - `metric_resource_id` - (Optional) The ID of the Resource which the Rule monitors.
