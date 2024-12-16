@@ -1,5 +1,6 @@
 <!-- BEGIN_TF_DOCS -->
 # terraform-azure-monitor-autoscale-setting
+The official AVM module based on this repository has been released at https://github.com/Azure/terraform-azurerm-avm-res-insights-autoscalesetting.
 
 This module encapsulates azurerm\_monitor\_autoscale\_setting where it can be used for autoscaling configuration for VMSS, App Services and other scalable resources.
 
